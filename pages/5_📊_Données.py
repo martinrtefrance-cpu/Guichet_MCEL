@@ -103,7 +103,7 @@ def color_statut(val):
 
 display_df = filtered[selected_cols].copy()
 st.dataframe(
-    display_df.style.map(color_statut, subset=["Statut"]) if "Statut" in selected_cols else []),
+    display_df.style.applymap(color_statut, subset=["Statut"]) if "Statut" in selected_cols else []),
     use_container_width=True, height=500,
 )
 
